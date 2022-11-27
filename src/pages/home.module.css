@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    min-width: 450px;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    height: 100vh;
+}
+.slide_menu{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background: #795548;
+    padding-top: 150px;
+    box-sizing: border-box;
+}
+.slide_menu_text{
+    text-align: center;
+    color: #eeeeee;
+}
+.up{
+    font-size: 48px;
+}
+.down{
+    font-size: 56px;
+}
+.chevron_up {
+    display: block;
+    padding-top: 120px;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+}
+
+.tab_menu{
+    width: 100%;
+    height: 80px;
+    background-color: #795548;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.main_container{
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    column-gap: 60px;
+    row-gap: 30px;
+    justify-content: center;
+}
+.item{
+    border: 1px solid black;
+    width: 100%;
+    height: 240px;
+    border-radius: 30px;
+}
+.img {
+    
+    padding-top: 30px;
+    width: 80%;
+    height: 80%;
+}
+.text{
+    margin-top: 30px;
+    font-family: 'Pretendard-SemiBold';
+    text-align: center;
+}
+
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
