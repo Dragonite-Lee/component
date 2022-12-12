@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import chevronImg from '../chevron-up.png'
 import { useEffect, useRef, useState } from "react";
 import transition from '../transition.PNG'
+import snow from "../snow.PNG"
 
 export default function Home() {
-    let urlList = [transition];
-    let dataList = ["transition"]
+    let urlList = [transition, snow]
+    let dataList = ["transition","snow"]
     
     const [click, setClick] = useState(false);
     const chevronBtn = useRef(null);
