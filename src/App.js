@@ -11,7 +11,7 @@ function App() {
     
     <div className={styles.App}>
       <Routes>
-            <Route exact path='/component' element={Home()} />
+            <Route exact path='/' element={Home()} />
             <Route exact path="/transition" element={Transition()} />
             <Route exact path="/snow" element={Snow()} />
             <Route exact path="/rabbit" element={Rabbit()} />

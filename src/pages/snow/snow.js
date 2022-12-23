@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 export default function Snow() {
     
     const r = useRef(null)
-    
+    //음 버튼을 누르면 눈이오게끔만들기
     // window.onload = function() {
     //     const snowBg = document.querySelector(`.${styles.snow_bg}`);
     //     console.log(snowBg)
