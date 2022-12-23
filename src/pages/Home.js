@@ -4,10 +4,11 @@ import chevronImg from '../chevron-up.png'
 import { useEffect, useRef, useState } from "react";
 import transition from '../transition.PNG'
 import snow from "../snow.PNG"
+import rabbit from "../rabbit.PNG"
 
 export default function Home() {
-    let urlList = [transition, snow]
-    let dataList = ["transition","snow"]
+    let urlList = [transition, snow, rabbit]
+    let dataList = ["transition","snow", "rabbit"]
     
     const [click, setClick] = useState(false);
     const chevronBtn = useRef(null);
@@ -21,9 +22,11 @@ export default function Home() {
         if (click === true) {
             onclickHandler()
         }
+        
     },[click])
 
-    console.log(click)
+    
+    // console.log(click)
     return (
         <div className={styles.container} >
             <div className={styles.slide_menu} ref={chevronBtn} >
@@ -47,7 +50,7 @@ export default function Home() {
                 <div className={styles.main_container}>
                     {urlList.map((data,index)=>(
                         <div key={index} className={styles.item}>
-                            <Link to={`/component/${dataList[index]}`} >
+                            <Link to={`/${dataList[index]}`} >
                                 <img 
                                     src={data} 
                                     alt="컴포넌트사진"
