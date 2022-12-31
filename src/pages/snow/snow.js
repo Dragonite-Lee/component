@@ -5,57 +5,50 @@ import { useEffect, useRef } from "react";
 
 export default function Snow() {
     
-    const r = useRef(null)
+    const snowBgRef = useRef(null)
     //음 버튼을 누르면 눈이오게끔만들기
-    // window.onload = function() {
-    //     const snowBg = document.querySelector(`.${styles.snow_bg}`);
-    //     console.log(snowBg)
-    //     console.log(r.current)
-    // }
-   
-    // useEffect(()=> {
-    //     const snow = document.createElement('div'); 
-    //     const snowBg = document.querySelector(`.${styles.snow_bg}`);
-    //     // const root = document.querySelector('#root')
-    //     function addSnow(element,plus) {
-    //         plus.classList.add(`${styles.snow}`);
-    //         plus.style.marginLeft = randomPosition() + 'px';
-    //         plus.style.animationDuration = `${Math.random() * (20 - 8) + 8}s`
-    //         // rcur.appendChild(snow);
-    //         element.appendChild(plus)
-    //         // root.replaceChild(element, root.querySelector('div'))
-    //     }
-    //     for(let i = 0; i < 300; i++) {
-    //         addSnow(snowBg, snow)
-    //     }
-    // },[])
     
-    //     useEffect(() => {
-    //         const snowBg = document.querySelector(`.${styles.snow_bg}`);
-    //         console.log(snowBg)
-    //         console.log(r.current)
-    //     },[])
-        
-        
-    
-    
-
-    
-
-    function randomPosition() {
-        return Math.floor(Math.random()*window.innerWidth)
+    const startSnow = () => {
+            const snow = document.createElement('div'); 
+            const snowBg = snowBgRef.current
+            
+            function addSnow() {
+                snow.classList.add(`${styles.snow}`);
+                snow.style.marginLeft = randomPosition() + 'px';
+                snow.style.animationDuration = `${Math.random() * (20 - 8) + 8}s`
+                // rcur.appendChild(snow);
+                snowBg.appendChild(snow)
+                // root.replaceChild(element, root.querySelector('div'))
+            }
+            for(let i = 0; i < 300; i++) {
+                addSnow()
+            }
+            function randomPosition() {
+                return Math.floor(Math.random()*window.innerWidth)
+            }
     }
+    
+
+
+    
 
     return (
         <>
             <nav className={styles.nav}>
-                    <Link to="/component" className={styles.link}>
+                    <Link to="/" className={styles.link}>
                         뒤로가기
                     </Link>
+                    <button className={styles.btn} onClick={()=>{
+                        for(let i = 0; i < 300; i++) {
+                            startSnow()
+                        }
+                    }}>눈 내리기</button>
             </nav>
-            <div className={styles.snow_bg} ref={r} >
+            <div className={styles.snow_bg} ref={snowBgRef} >
+                
                 {/* <div className={styles.snow}></div> */}
             </div>
+            
         </>
     )
 }

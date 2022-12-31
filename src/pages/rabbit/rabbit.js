@@ -13,6 +13,7 @@ export default function Rabbit() {
     const [isPlay, setIsPlay] = useState(false);
     const [timesetModal, setTimesetModal] = useState(false);
     const rabbitImg = useRef(null);
+    const rabbitCage = useRef(null);
 
     // *클릭 횟수
     const clickCount = () => {
@@ -33,12 +34,17 @@ export default function Rabbit() {
     const reloadFunction = () => {
         window.location.reload()
     }
+    let cagewidth;
+    if(rabbitCage.current) {
+        cagewidth = rabbitCage.current.offsetWidth;
+        console.log(cagewidth)
+    }
     
-
     // *토끼 이동
-        if(rabbitImg.current) {
-            rabbitImg.current.style.marginLeft = `${10 * click}px`;
-        }
+    if(rabbitImg.current) {
+        console.log(rabbitImg)
+        rabbitImg.current.style.marginLeft = `${cagewidth / 100 * click}px`;
+    }
     
     return (
         <>
@@ -54,12 +60,12 @@ export default function Rabbit() {
                 </div>
             )}
             <nav className={styles.nav}>
-                    <Link to="/component" className={styles.link}>
+                    <Link to="/" className={styles.link}>
                         뒤로가기
                     </Link>
             </nav>
             <div className={styles.container}>
-                <div className={styles.field}>
+                <div className={styles.field} ref={rabbitCage}>
                     <img 
                         className={styles.rabbit}
                         src={rabbit} 

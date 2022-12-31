@@ -5,7 +5,7 @@ export default function Transition() {
     return(
         <>
             <nav className={styles.nav}>
-                    <Link to="/component" className={styles.link}>
+                    <Link to="/" className={styles.link}>
                         뒤로가기
                     </Link>
             </nav>
